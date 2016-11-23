@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.onReset}>
-          Seconds passed: {AppState.timer}
+          Seconds passeddhskdhs: {AppState.timer}
         </button>
         <DevTools />
       </div>

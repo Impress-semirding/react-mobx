@@ -2,15 +2,10 @@ require("react-hot-loader/patch")
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { Router } from 'react-router';
-import createRoute from './route';
-import history from './history';
-import App from './components';
+import App from './provider';
 
 render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
+    <App />,
   document.getElementById('root')
 );
 
