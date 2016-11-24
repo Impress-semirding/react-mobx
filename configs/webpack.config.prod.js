@@ -22,7 +22,7 @@ const baseCfg = {
     path: config.distPath,
     filename: "[name].js",
     chunkFilename: '[name].[chunkhash].js',
-    publicPath: config.publicPath
+    publicPath: './'
   },
   
   externals: {
@@ -79,7 +79,7 @@ const baseCfg = {
     // }),
     new HtmlWebpackPlugin({
       // title: '指南针-高手直播室',
-      template: `${config.projectPath}/static/index.ejs`, // Load a custom template (ejs by default see the FAQ for details)
+      // template: `${config.projectPath}/static/index.ejs`, // Load a custom template (ejs by default see the FAQ for details)
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
 

@@ -1,19 +1,6 @@
-const Index = {
-  path: 'index',
-  getComponent: (nextState, cb) => {
-    require.ensure([], (require) => {
-      cb(null, require('../components/app/App.jsx').default);
-    }, 'index');
-  },
-};
-
-const route = [
-  {
-    path: '/',
-    childRoutes: [
-      Index,
-    ]
-  }
-];
-
-export default route;
+// if (process.env.NODE_ENV === 'development') {
+//   module.exports = require('./index.dev.js');
+// } else {
+//   module.exports = require('./index.prod.js');
+// }
+module.exports = require('./index.dev.js');
