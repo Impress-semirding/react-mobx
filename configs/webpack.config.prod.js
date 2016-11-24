@@ -5,21 +5,24 @@ const autoprefixer = require('autoprefixer');
 
 const webpack = require('webpack');
 
-const AssetsPlugin = require('../modules/assets-webpack-plugin');
+const AssetsPlugin = require('assets-webpack-plugin');
 const config = require('./config');
 
 const baseCfg = {
   devtool: 'source-map',
 
-  entry: [
-    './src/index'
-  ],
+  entry: {
+    app: [
+      './src/index'
+    ],
+    vendor : ['react', 'react-router', 'mobx', 'mobx-react']
+  },
 
   output: {
     path: config.distPath,
     filename: "[name].js",
     chunkFilename: '[name].[chunkhash].js',
-    publicPath: '/static/'
+    publicPath: config.publicPath
   },
   
   externals: {
@@ -29,7 +32,7 @@ const baseCfg = {
   module: {
     loaders: [
       {
-        test: /\.js?$/,
+        test: /\.jsx?$/,
         include: config.srcPath,
         loader: 'babel'
       },
@@ -74,10 +77,10 @@ const baseCfg = {
     //   context: config.projectPath,
     //   manifest: require("../vendor-manifest.json"),
     // }),
-    // new HtmlWebpackPlugin({
-    //   // title: '指南针-高手直播室',
-    //   template: `${config.projectPath}/web/template/index.prod.ejs`, // Load a custom template (ejs by default see the FAQ for details)
-    // }),
+    new HtmlWebpackPlugin({
+      // title: '指南针-高手直播室',
+      template: `${config.projectPath}/static/index.ejs`, // Load a custom template (ejs by default see the FAQ for details)
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
 
     new ExtractTextPlugin('main', "style.css?[contenthash]" , { allChunks: true }),
@@ -92,18 +95,7 @@ const baseCfg = {
       assetsRegex: /\.(jpe?g|png|gif|svg|swf)\??/,
       prettyPrint: true,
     }),
-      new webpack.optimize.CommonsChunkPlugin({
-      name: 'app',
-
-      children: true,
-      // (use all children of the chunk)
-
-      async: true,
-      // (create an async commons chunk)
-
-      // minChunks: 3,
-      // // (3 children must share the module before it's separated)
-    }),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
   ]
 
 }

@@ -6,17 +6,19 @@ const config = require('./config');
 const baseCfg = {
   devtool: 'source-map',
 
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-hot-middleware/client?reload=true',
-    './src/index'
-  ],
+  entry: {
+    app: [
+      'react-hot-loader/patch',
+      'webpack-hot-middleware/client?reload=true',
+      './src/index'
+    ]
+  },
 
   output: {
-    path:  path.join(__dirname, 'dist'),
-    filename: "app.js",
+    path:  config.distPath,
+    filename: '[name].js',
     chunkFilename: '[name].chunk.js',
-    publicPath: '/static/'
+    publicPath: config.publicPath
   },
   
   externals: {
@@ -44,9 +46,7 @@ const baseCfg = {
     ]
   },
 
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
+  resolve: config.resolve,
 
   plugins: [
     new webpack.DefinePlugin({
