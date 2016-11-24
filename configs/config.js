@@ -5,9 +5,9 @@ const projectPath = path.resolve(__dirname, '..');
 config = {
   projectPath,
   modulePath: `${projectPath}/modules`,
-  distPath: `${projectPath}/static`,
-  libPath: `${projectPath}/static/libs`,
-  publicPath: '/static/user/',
+  distPath: `${projectPath}/dist`,
+  libPath: `${projectPath}/dist/libs`,
+  publicPath: '/static/',
 };
 
 // 需要 webpakc 编译的目录
@@ -16,6 +16,7 @@ config.srcPath = [
 ]
 
 config.resolve = {
+
   root: [
     // 模块路径 待定
     config.modulePath
@@ -23,7 +24,9 @@ config.resolve = {
   alias: {
     shared: `${config.projectPath}/shared/`,
     libs: config.libPath
-  }
+  },
+
+  extensions: ['', '.js', '.jsx']
 };
 
 module.exports = config;
