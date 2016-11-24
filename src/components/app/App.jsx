@@ -13,14 +13,14 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.onReset}>
-          Seconds: dingxue {asycn.timer}
+          Seconds: demo {asycn.timer}
         </button>
       </div>
     );
   }
 }
 
-App.propTypes = {
+App.wrappedComponent.propTypes = {
   store: React.PropTypes.object.isRequired
 };
 
