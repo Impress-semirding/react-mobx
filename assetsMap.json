@@ -1,11 +1,5 @@
 {
-  "vendor": {
-    "js": "/vendor.bundle.js"
-  },
-  "index": {
-    "js": "/index.4c3e8bcd4b58aa1f75b7.js"
-  },
   "app": {
-    "js": "/app.js"
+    "js": "/static/app.js"
   }
 }

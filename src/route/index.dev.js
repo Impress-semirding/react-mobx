@@ -1,25 +1,12 @@
-// const Index = {
-//   path: 'index',
-//   getComponent: (nextState, cb) => {
-//     require.ensure([], (require) => {
-//       cb(null, require('../components/app/App.jsx').default);
-//       //  hot-load
-//       if (module.hot) {
-//         module.hot.accept("../components/app/App.jsx", function() {
-//           var newApp = require('../components/app/App.jsx').default;
-//           cb(null, newApp);
-//         // do something when x was updated
-//         });
-//       }
-//     }, 'index');
-//   },
-// };
-
 import App from '../components/app/App.jsx';
+import { injectAsyncReducer } from '../store';
+import AppState from './../components/app/AppState';
 
 const Index = {
   path: 'index',
   getComponent: (nextState, cb) => {
+    const appState = new AppState();
+    injectAsyncReducer('asycn', appState);
     cb(null, App);
   },
 };

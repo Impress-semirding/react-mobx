@@ -5,14 +5,14 @@ import DevTools from 'mobx-react-devtools';
 @inject('store') @observer
 class App extends Component {
   onReset = () => {
-    this.props.store.AppState.resetTimer();
+    this.props.store.asycn.resetTimer();
   }
   render() {
-    const { AppState } = this.props.store;
+    const { asycn } = this.props.store;
     return (
       <div>
         <button onClick={this.onReset}>
-          Seconds  -ha: {AppState.timer}
+          Seconds-test: {asycn.timer}
         </button>
         <DevTools />
       </div>
