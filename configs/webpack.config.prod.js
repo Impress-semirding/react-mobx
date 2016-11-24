@@ -13,7 +13,7 @@ const baseCfg = {
 
   entry: {
     app: [
-      './src/index'
+      './src/index.prod.jsx'
     ],
     vendor : ['react', 'react-router', 'mobx', 'mobx-react']
   },
