@@ -38,7 +38,6 @@ app.use(webpackConfig.output.publicPath, Express.static('./static'));
 const request = require('superagent');
 app.use((req, res) => {
   if (process.env.NODE_ENV !== 'production') {
-    console.log('不是production')
     res.render('index', {});
   } else {
     console.log('production')
