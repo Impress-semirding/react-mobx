@@ -79,17 +79,17 @@ const baseCfg = {
     // }),
     new HtmlWebpackPlugin({
       // title: '指南针-高手直播室',
-      // template: `${config.projectPath}/static/index.ejs`, // Load a custom template (ejs by default see the FAQ for details)
+      template: `${config.projectPath}/dist/index.html`, // Load a custom template (ejs by default see the FAQ for details)
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
 
     new ExtractTextPlugin('main', "style.css?[contenthash]" , { allChunks: true }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compressor: {
-    //     warnings: false,
-    //     //drop_console: true
-    //   }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false,
+        //drop_console: true
+      }
+    }),
     new AssetsPlugin({
       filename: 'assetsMap.json',
       assetsRegex: /\.(jpe?g|png|gif|svg|swf)\??/,
