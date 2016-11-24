@@ -22,7 +22,7 @@ const baseCfg = {
     path: config.distPath,
     filename: "[name].js",
     chunkFilename: '[name].[chunkhash].js',
-    publicPath: './'
+    publicPath: '/'
   },
   
   externals: {

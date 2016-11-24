@@ -1,8 +1,8 @@
 {
   "vendor": {
-    "js": "./vendor.bundle.js"
+    "js": "/vendor.bundle.js"
   },
   "app": {
-    "js": "./app.js"
+    "js": "/app.js"
   }
 }
