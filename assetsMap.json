@@ -1,5 +1,5 @@
 {
   "main": {
-    "js": "/static/bundle.js"
+    "js": "/static/app.js"
   }
 }
