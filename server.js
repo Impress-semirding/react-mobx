@@ -23,7 +23,7 @@ app.use(webpackDevMiddleware(compiler, {
 app.use(webpackHotMiddleware(compiler));
 
 
-app.use(webpackConfig.output.publicPath, Express.static('/static'));
+app.use(webpackConfig.output.publicPath, Express.static('./static'));
 
 const request = require('superagent');
 app.use((req, res) => {
