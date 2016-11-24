@@ -2,6 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin');
 const config = require('./config');
+var GenerateAssetPlugin = require('generate-asset-webpack-plugin');
+
+//这就是那个你喜欢的写包含hash的json文件的部分
+var createJson = function(compilation) {
+    return JSON.stringify({hash: compilation.hash});
+};
 
 const baseCfg = {
   devtool: 'source-map',
@@ -78,6 +84,13 @@ const baseCfg = {
       assetsRegex: /\.(jpe?g|png|gif|svg|swf)$/,
       prettyPrint: true
     }),
+    new GenerateAssetPlugin({
+      filename: 'test.json',//输出到根目录下的test.json文件
+      fn: (compilation, cb) => {
+          cb(null, createJson(compilation));
+      },
+      extraFiles: []
+    })
   ]
 
 }
