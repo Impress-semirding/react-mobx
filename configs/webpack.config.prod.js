@@ -15,7 +15,7 @@ const baseCfg = {
     app: [
       './src/index.prod.jsx'
     ],
-    vendor : ['react', 'react-router', 'mobx', 'mobx-react']
+    vendor : ['react', 'react-dom', 'react-router', 'mobx', 'mobx-react']
   },
 
   output: {

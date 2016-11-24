@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
+// import DevTools from 'mobx-react-devtools';
 
+// <DevTools />
 @inject('store') @observer
 class App extends Component {
   onReset = () => {
@@ -12,9 +13,8 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.onReset}>
-          Seconds: {asycn.timer}
+          Seconds: dingxue {asycn.timer}
         </button>
-        <DevTools />
       </div>
     );
   }

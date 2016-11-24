@@ -3,7 +3,7 @@ import { Router, browserHistory } from 'react-router';
 import { Provider } from 'mobx-react';
 import { syncHistoryWithStore } from 'mobx-react-router';
 /*eslint-disable */
-import DevTools from 'mobx-react-devtools';
+// import DevTools from 'mobx-react-devtools';
 /*eslint-disable */
 import createRoute from './route';
 import stores, { routingStore } from './store';
