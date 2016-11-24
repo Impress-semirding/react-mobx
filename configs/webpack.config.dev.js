@@ -27,6 +27,13 @@ const baseCfg = {
 
   module: {
     noParse: /libs\/.+\.min\..+/,
+    preLoaders: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'eslint-loader',
+        include: config.srcPath,
+      },
+    ],
     loaders: [
       {
         test: /\.jsx?$/,
