@@ -58,10 +58,10 @@ const baseCfg = {
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/),
     // boost build time
-    // new webpack.DllReferencePlugin({
-    //   context: config.projectPath,
-    //   manifest: require("../vendor-manifest.json"),
-    // }),
+    new webpack.DllReferencePlugin({
+      context: config.projectPath,
+      manifest: require("../vendor-manifest.json"),
+    }),
     // enable hot module replacement
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),

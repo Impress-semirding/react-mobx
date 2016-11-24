@@ -12,14 +12,14 @@ const baseCfg = {
   devtool: 'source-map',
 
   entry: [
-    './web/index.prod.js',
+    './src/index'
   ],
 
   output: {
     path: config.distPath,
     filename: "[name].js",
     chunkFilename: '[name].[chunkhash].js',
-    publicPath: config.publicPath
+    publicPath: '/static/'
   },
   
   externals: {
@@ -74,10 +74,10 @@ const baseCfg = {
     //   context: config.projectPath,
     //   manifest: require("../vendor-manifest.json"),
     // }),
-    new HtmlWebpackPlugin({
-      // title: '指南针-高手直播室',
-      template: `${config.projectPath}/web/template/index.prod.ejs`, // Load a custom template (ejs by default see the FAQ for details)
-    }),
+    // new HtmlWebpackPlugin({
+    //   // title: '指南针-高手直播室',
+    //   template: `${config.projectPath}/web/template/index.prod.ejs`, // Load a custom template (ejs by default see the FAQ for details)
+    // }),
     new webpack.optimize.OccurenceOrderPlugin(),
 
     new ExtractTextPlugin('main', "style.css?[contenthash]" , { allChunks: true }),
