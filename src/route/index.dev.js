@@ -15,10 +15,12 @@
 //   },
 // };
 
+import App from '../components/app/App.jsx';
+
 const Index = {
   path: 'index',
   getComponent: (nextState, cb) => {
-    cb(null, require('../components/app/App.jsx').default);
+    cb(null, App);
   },
 };
 

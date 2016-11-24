@@ -7,7 +7,6 @@ import DevTools from 'mobx-react-devtools';
 import AppState from './components/app/AppState';
 //  当前语句解决require.ensure 的热加载问题，也可以在源头处解决
 /*eslint-disable */
-import Index from './components/app/App.jsx';
 import createRoute from './route';
 // const appState = new AppState();
 const routingStore = new RouterStore();
