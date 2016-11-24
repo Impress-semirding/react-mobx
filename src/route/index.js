@@ -1,6 +1,5 @@
-// if (process.env.NODE_ENV === 'development') {
-//   module.exports = require('./index.dev.js');
-// } else {
-//   module.exports = require('./index.prod.js');
-// }
-module.exports = require('./index.dev.js');
+if (process.env.NODE_ENV === 'development') {
+  module.exports = require('./index.dev.js');
+} else {
+  module.exports = require('./index.prod.js');
+}

@@ -79,7 +79,7 @@ const baseCfg = {
     // }),
     new HtmlWebpackPlugin({
       // title: '指南针-高手直播室',
-      template: `${config.projectPath}/dist/index.html`, // Load a custom template (ejs by default see the FAQ for details)
+      template: `${config.projectPath}/static/index.html`, // Load a custom template (ejs by default see the FAQ for details)
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
 
