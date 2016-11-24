@@ -5,16 +5,14 @@ const projectPath = path.resolve(__dirname, '..');
 config = {
   projectPath,
   modulePath: `${projectPath}/modules`,
-  distPath: `${projectPath}/assets`,
-  libPath: `${projectPath}/assets/libs`,
+  distPath: `${projectPath}/static`,
+  libPath: `${projectPath}/static/libs`,
   publicPath: '/static/user/',
 };
 
 // 需要 webpakc 编译的目录
 config.srcPath = [ 
-  `${projectPath}/modules`,
-  `${projectPath}/shared`,
-  `${projectPath}/web`,
+  `${projectPath}/src`,
 ]
 
 config.resolve = {

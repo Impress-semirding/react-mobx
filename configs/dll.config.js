@@ -5,7 +5,6 @@ const vendor = [
   'react',
   'react-dom',
   'react-router',
-  'immutable'
 ];
 
 module.exports = {
