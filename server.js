@@ -22,6 +22,7 @@ if (process.env.NODE_ENV === 'production') {
       colors: true
     }));
   });
+  app.use(webpackConfig.output.publicPath, Express.static('./dist'));
   //app.use(varConfig.publicPath, Express.static(varConfig.assetsPath));
 } else {
   app.use(webpackDevMiddleware(compiler, {
@@ -30,22 +31,18 @@ if (process.env.NODE_ENV === 'production') {
     publicPath: webpackConfig.output.publicPath 
   }));
   app.use(webpackHotMiddleware(compiler));
+  app.use(webpackConfig.output.publicPath, Express.static('./static'));
 }
 
 
-app.use(webpackConfig.output.publicPath, Express.static('./static'));
+
 
 const request = require('superagent');
 app.use((req, res) => {
   if (process.env.NODE_ENV !== 'production') {
     res.render('index', {});
   } else {
-    console.log('production')
-    request
-    .get(`http://localhost:8080${webpackConfig.output.publicPath}index.html`)
-    .end(function(err, _res){
-      res.send(_res.text);
-    });
+    res.sendFile(path.resolve('./dist', './index.html'));
   }
 });
 
