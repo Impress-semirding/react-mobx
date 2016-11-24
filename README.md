@@ -14,6 +14,9 @@ npm start
 open http://localhost:3000
 ```
 
+```
+you can fetch 'http://localhost:8080/api/posts/1' to simulation asycn request，and you will get data from db.json 
+```
 
 ### Credits
 

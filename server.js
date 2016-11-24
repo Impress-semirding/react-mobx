@@ -8,7 +8,8 @@ const webpackConfig = require('./configs');
 
 // Initialize the Express App
 const app = new Express();
-
+const jsonServer = require('json-server')
+const router = jsonServer.router('./data/db.json');
 const compiler = webpack(webpackConfig);
 
 
@@ -28,14 +29,12 @@ if (process.env.NODE_ENV === 'production') {
   app.use(webpackDevMiddleware(compiler, {
     noInfo: true, 
     //colors: true,
-    publicPath: webpackConfig.output.publicPath 
+    publicPath: webpackConfig.output.publicPath
   }));
   app.use(webpackHotMiddleware(compiler));
   app.use(webpackConfig.output.publicPath, Express.static('./static'));
+  app.use('/api', router);
 }
-
-
-
 
 const request = require('superagent');
 app.use((req, res) => {
