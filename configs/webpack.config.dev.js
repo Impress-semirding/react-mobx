@@ -14,7 +14,7 @@ const baseCfg = {
 
   output: {
     path:  path.join(__dirname, 'dist'),
-    filename: "bundle.js",
+    filename: "app.js",
     chunkFilename: '[name].chunk.js',
     publicPath: '/static/'
   },
@@ -40,7 +40,7 @@ const baseCfg = {
         test: /\.(jpe?g|png|gif|svg)$/i, 
         // include: config.srcPath,
         loader: `url?limit=10000&name=[path][name].[ext]` 
-      }      
+      }
     ]
   },
 
