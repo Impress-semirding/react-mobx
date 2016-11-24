@@ -1,22 +1,22 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const AssetsPlugin = require('../modules/assets-webpack-plugin');
+const AssetsPlugin = require('assets-webpack-plugin');
 const config = require('./config');
 
 const baseCfg = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
 
   entry: [
+    'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
-    './web/index.js',
+    './src/index'
   ],
 
   output: {
-    path: config.distPath,
-    filename: "app.js",
+    path:  path.join(__dirname, 'dist'),
+    filename: "bundle.js",
     chunkFilename: '[name].chunk.js',
-    publicPath: config.publicPath
+    publicPath: '/static/'
   },
   
   externals: {
@@ -27,7 +27,7 @@ const baseCfg = {
     noParse: /libs\/.+\.min\..+/,
     loaders: [
       {
-        test: /\.js?$/,
+        test: /\.jsx?$/,
         include: config.srcPath,
         loader: 'babel'
       },
@@ -44,13 +44,8 @@ const baseCfg = {
     ]
   },
 
-  resolve: config.resolve,
-
-  sassLoader: {
-    // includePaths: [
-    //   config.modulePath,
-    // ],
-    //precision:2
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   },
 
   plugins: [
@@ -58,22 +53,19 @@ const baseCfg = {
       'process.env': {
         'PLANTFORM': JSON.stringify('web'),
         'NODE_ENV': JSON.stringify('development'),
-        'HOSTNAME': JSON.stringify('http://localhost:8080'),
+        'HOSTNAME': JSON.stringify('http://localhost:3000'),
       }
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/),
     // boost build time
-    new webpack.DllReferencePlugin({
-      context: config.projectPath,
-      manifest: require("../vendor-manifest.json"),
-    }),
+    // new webpack.DllReferencePlugin({
+    //   context: config.projectPath,
+    //   manifest: require("../vendor-manifest.json"),
+    // }),
     // enable hot module replacement
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new HtmlWebpackPlugin({
-      template: `${config.projectPath}/web/template/index.dev.ejs`,
-    }),
     new AssetsPlugin({
       filename: 'assetsMap.json',
       assetsRegex: /\.(jpe?g|png|gif|svg|swf)$/,
