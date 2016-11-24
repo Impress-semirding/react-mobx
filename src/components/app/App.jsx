@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.onReset}>
-          Seconds-test: {asycn.timer}
+          Seconds: {asycn.timer}
         </button>
         <DevTools />
       </div>
