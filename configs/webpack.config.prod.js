@@ -84,12 +84,12 @@ const baseCfg = {
     new webpack.optimize.OccurenceOrderPlugin(),
 
     new ExtractTextPlugin('main', "style.css?[contenthash]" , { allChunks: true }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false,
-        //drop_console: true
-      }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compressor: {
+    //     warnings: false,
+    //     //drop_console: true
+    //   }
+    // }),
     new AssetsPlugin({
       filename: 'assetsMap.json',
       assetsRegex: /\.(jpe?g|png|gif|svg|swf)\??/,
