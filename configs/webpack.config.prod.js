@@ -20,7 +20,7 @@ const baseCfg = {
 
   output: {
     path: config.distPath,
-    filename: "[name].js",
+    filename: "[name].[chunkhash].js",
     chunkFilename: '[name].[chunkhash].js',
     publicPath: '/'
   },
@@ -95,7 +95,7 @@ const baseCfg = {
       assetsRegex: /\.(jpe?g|png|gif|svg|swf)\??/,
       prettyPrint: true,
     }),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', '[name].[chunkhash].js'),
   ]
 
 }
