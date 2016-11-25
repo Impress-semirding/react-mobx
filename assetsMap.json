@@ -1,11 +1,5 @@
 {
-  "vendor": {
-    "js": "/vendor.5fefc66635de0811adf1.js"
-  },
-  "index": {
-    "js": "/index.0b1ef4964afb509f14cb.js"
-  },
   "app": {
-    "js": "/app.6c6e403407d73868e433.js"
+    "js": "/static/app.js"
   }
 }
