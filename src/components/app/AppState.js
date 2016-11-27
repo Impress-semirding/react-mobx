@@ -5,7 +5,7 @@ class AppState {
 
   constructor() {
     setInterval(() => {
-      this.timer += 100;
+      this.timer += 1;
     }, 1000);
   }
 

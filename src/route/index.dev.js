@@ -4,11 +4,11 @@ import AppState from './../components/app/AppState';
 
 const Index = {
   path: 'index',
-  getComponent: (nextState, cb) => {
+  component: App,
+  onEnter: () => {
     const appState = new AppState();
     injectAsyncReducer('asycn', appState);
-    cb(null, App);
-  },
+  }
 };
 
 const route = [
