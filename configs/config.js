@@ -13,6 +13,7 @@ config = {
 // 需要 webpakc 编译的目录
 config.srcPath = [ 
   `${projectPath}/src`,
+  `${projectPath}/libs`
 ]
 
 config.resolve = {
@@ -23,7 +24,7 @@ config.resolve = {
   ],
   alias: {
     shared: `${config.projectPath}/shared/`,
-    libs: config.libPath
+    libs: `${projectPath}/libs`
   },
 
   extensions: ['', '.js', '.jsx']

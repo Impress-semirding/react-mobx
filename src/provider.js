@@ -5,6 +5,7 @@ import { syncHistoryWithStore } from 'mobx-react-router';
 /*eslint-disable */
 // import DevTools from 'mobx-react-devtools';
 /*eslint-disable */
+import fetch, { params } from 'libs/fetch';
 import createRoute from './route';
 import stores, { routingStore } from './store';
 
