@@ -2,11 +2,11 @@
 let baseurl;
 
 if (process.env.NODE_ENV === 'production') {
-  baseurl = '/api_v1';
+  baseurl = '/';
 } else {
   // baseurl = 'http://api.y.dev.lanyi99.cn/v1';
   
-  baseurl = 'http://www-test.ycl999.com/api_v1';
+  baseurl = 'http://localhost:8080';
 }
 
 const headers = new Headers({
