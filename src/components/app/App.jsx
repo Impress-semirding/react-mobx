@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.onReset}>
-          Seconds: demo {asycn.timer}
+          Seconds: demo-test-dingxue-goods {asycn.timer}
         </button>
       </div>
     );
