@@ -39,7 +39,7 @@ const baseCfg = {
       {
         test:   /\.s?css$/,
         include: config.srcPath,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader!postcss-loader!sass-loader')
       },
       { 
         test: /\.(jpe?g|png|gif|svg)$/i, 
