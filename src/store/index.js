@@ -10,10 +10,11 @@ import { memberShip } from './../accessConfig/memberShip';
 const userStore = UserStore.fromJS({
   userId: 'dhsohwoeh739237',
   nickname: 'dingxue',
-  avatar: 'http://img.alicdn.com/tps/TB13Od5LpXXXXX_XXXXXXXXXXXX-150-50.png'
+  avatar: 'http://img.alicdn.com/tps/TB13Od5LpXXXXX_XXXXXXXXXXXX-150-50.png',
+  role: 2
 });
 
-const memberShipStore = MemberShipStore.fromJS(memberShip);
+const memberShipStore = MemberShipStore.fromJS(memberShip, 2);
 
 export const routingStore = new RouterStore();
 const stores = {

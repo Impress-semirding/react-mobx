@@ -3,6 +3,7 @@ import MemberShipModel from '../models/MemberShipModel'
 
 export default class MemberShipStore {
   @observable MemberShip = [];
+  @observable MemberShipStore = [];
 
   // subscribeServerToStore() {
   //   reaction(
@@ -18,14 +19,20 @@ export default class MemberShipStore {
 
   }
 
-  toJS() {
-    return this.MemberShip.map(ship => ship.toJS());
+  getByKey(key) {
+    return this[key].map(ship => ship.toJS());
   }
 
-  static fromJS(array) {
+  toJS() {
+    return this.MemberShipStore.map(ship => ship.toJS());
+  }
+
+  static fromJS(array, role) {
     const memberShipStore = new MemberShipStore();
     memberShipStore.MemberShip = array.map(value => new MemberShipModel(value));
-
+    memberShipStore.MemberShipStore = memberShipStore.MemberShip.filter((value) => {
+      return role >= value.toJS().role;
+    })
     return memberShipStore;
   }
 }
