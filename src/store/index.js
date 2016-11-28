@@ -1,5 +1,8 @@
 import { RouterStore } from 'mobx-react-router';
 import UserStore from './userStore';
+import MemberShipStore from './MemberShipStore';
+//  test case
+import { memberShip } from './../accessConfig/memberShip';
 
 // this.userId = opt.id;
 // this.nickname = opt.nickname;
@@ -10,12 +13,15 @@ const userStore = UserStore.fromJS({
   avatar: 'http://img.alicdn.com/tps/TB13Od5LpXXXXX_XXXXXXXXXXXX-150-50.png'
 });
 
+const memberShipStore = MemberShipStore.fromJS(memberShip);
+
 export const routingStore = new RouterStore();
 const stores = {
   // AppState: new AppState(),
   // Key can be whatever you want
   routing: new RouterStore(),
-  userStore: userStore
+  userStore: userStore,
+  memberShipStore: memberShipStore
   // ...other stores
 };
 

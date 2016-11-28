@@ -1,5 +1,5 @@
-const memberShip = {
-  company: {
+export const memberShip = [
+  {company: {
     value: [
     {
       id: 'shanghai',
@@ -9,9 +9,8 @@ const memberShip = {
       name: '福州'
     }
     ]
-    role: 0
-  },
-  section: {
+  }, role: 0},
+  {section: {
     value: [
     {
       id: 'yafa',
@@ -21,9 +20,8 @@ const memberShip = {
       name: "新媒体事业部门"
     }
     ]
-    role: 1
-  },
-  team: {
+  }, role: 1},
+  {team: {
     value: [
     {
       id: "A",
@@ -34,9 +32,8 @@ const memberShip = {
       name: 'B组'
     }
     ]
-    role: 2
-  },
-  rank: {
+  }, role: 2},
+  {rank: {
     value: [
     {
       id: '工程师',
@@ -47,6 +44,5 @@ const memberShip = {
       name: "高级开发工程师"
     }
     ]
-    role: 4
-  }
-}
+  }, role: 4}
+]
