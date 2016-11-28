@@ -2,11 +2,11 @@ const path = require('path');
 
 const projectPath = path.resolve(__dirname, '..');
 
+
 config = {
   projectPath,
-  modulePath: `${projectPath}/modules`,
   distPath: `${projectPath}/dist`,
-  libPath: `${projectPath}/dist/libs`,
+  libPath: `${projectPath}/libs`,
   publicPath: '/static/',
 };
 
@@ -17,14 +17,8 @@ config.srcPath = [
 ]
 
 config.resolve = {
-
-  root: [
-    // 模块路径 待定
-    config.modulePath
-  ],
   alias: {
-    shared: `${config.projectPath}/shared/`,
-    libs: `${projectPath}/libs`
+    libs: config.libPath
   },
 
   extensions: ['', '.js', '.jsx']

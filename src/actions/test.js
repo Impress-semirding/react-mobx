@@ -1,4 +1,4 @@
-import fetch from '../../libs/fetch';
+import fetch from 'libs/fetch.js';
 
 export const fetchApi = () => {
   fetch('api', {
