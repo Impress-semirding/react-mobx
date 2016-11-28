@@ -2,6 +2,8 @@ import Main from '../components/app/App.jsx';
 import { injectAsyncReducer } from '../store';
 import AppState from './../components/app/AppState';
 import App from '../commons/head';
+import Relation from '../components/relation';
+
 
 const Index = {
   path: 'index',
@@ -12,12 +14,18 @@ const Index = {
   }
 };
 
+const memberRelation = {
+  path: 'relation',
+  component: Relation,
+}
+
 const route = [
   {
     path: '/',
     component: App,
     childRoutes: [
       Index,
+      memberRelation
     ]
   }
 ];

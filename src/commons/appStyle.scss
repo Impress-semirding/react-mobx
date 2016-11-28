@@ -1,3 +1,16 @@
-.red {
-	color: red;
+
+.g-head {
+  height: 60px;
+  border: 1px solid #eee;
+  .m-title {
+    margin: 10px;
+    font-size: 28px;
+    margin-right: 70px;
+  }
+  .f-margin {
+    margin-left: 40px;
+  }
+  .f-float {
+    float: right;
+  }
 }

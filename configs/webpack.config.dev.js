@@ -33,13 +33,13 @@ const baseCfg = {
 
   module: {
     noParse: /libs\/.+\.min\..+/,
-    preLoaders: [
-      {
-        test: /\.(js|jsx)$/,
-        loader: 'eslint-loader',
-        include: config.srcPath,
-      },
-    ],
+    // preLoaders: [
+    //   {
+    //     test: /\.(js|jsx)$/,
+    //     loader: 'eslint-loader',
+    //     include: config.srcPath,
+    //   },
+    // ],
     loaders: [
       {
         test: /\.jsx?$/,
@@ -47,9 +47,15 @@ const baseCfg = {
         loader: 'babel-loader'
       },
       {
-        test:   /\.s?css$/,
-        include: config.srcPath,
-        loader: 'style-loader!css-loader!sass-loader'
+        test: /\.css$/,
+        exclude: '/node_modules/',
+        loader: "style-loader!css-loader"
+      },
+      { test: /\.less/, loader: 'style-loader!css-loader!less-loader'},
+      {
+          test: /\.scss$/,
+          exclude: '/node_modules/',
+          loader: "style-loader!css-loader!sass-loader"
       },
       { 
         test: /\.(jpe?g|png|gif|svg)$/i, 
