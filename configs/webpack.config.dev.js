@@ -44,7 +44,7 @@ const baseCfg = {
       {
         test: /\.jsx?$/,
         include: config.srcPath,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test:   /\.s?css$/,
