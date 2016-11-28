@@ -2,7 +2,8 @@
 let baseurl;
 
 if (process.env.NODE_ENV === 'production') {
-  baseurl = '/';
+  // baseurl = '/';
+  baseurl = 'http://localhost:8080';
 } else {
   // baseurl = 'http://api.y.dev.lanyi99.cn/v1';
   
