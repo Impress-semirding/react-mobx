@@ -9,6 +9,7 @@ export default class UserModel {
     this.userId = opt.userId;
     this.nickname = opt.nickname;
     this.avatar = opt.avatar;
+    this.role = opt.role;
   }
 
   destroy() {
@@ -19,7 +20,8 @@ export default class UserModel {
     return {
       userId: this.userId,
       nickname: this.nickname,
-      avatar: this.avatar
+      avatar: this.avatar,
+      role: this.role
     };
   }
 
