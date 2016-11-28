@@ -6,7 +6,7 @@ class App extends PureComponent {
     //  通过key强制更新公用的菜单
     return (
       <div className="App">
-        Header.js
+        <div className="red">Header.js</div>
         {this.props.children}
       </div>
     );

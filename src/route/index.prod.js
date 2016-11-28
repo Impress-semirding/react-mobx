@@ -1,3 +1,4 @@
+import App from '../commons/head';
 import { injectAsyncReducer } from '../store';
 import AppState from './../components/app/AppState';
 
@@ -15,6 +16,7 @@ const Index = {
 const route = [
   {
     path: '/',
+    component: App,
     childRoutes: [
       Index,
     ]
