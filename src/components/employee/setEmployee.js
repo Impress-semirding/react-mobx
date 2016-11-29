@@ -3,12 +3,21 @@ import { Menu, Dropdown, Button, Icon, message } from 'antd';
 import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router';
 import QiniuImageUpload from "./../../commons/qiniuimageupload.jsx";
+import DropdownList from './../../commons/dropdown';
 
+
+        // <QiniuImageUpload ref="imageUploadDialog" onUploadSuccessHandler={this._onImageUploadSuccessHandler}  /> 
 
 @inject('store') @observer
 export default class SetEmployee extends Component {
-  _onImageUploadSuccessHandler(data){
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      current: '1',
+    };
+  }
 
+  _onImageUploadSuccessHandler(data){
     var state = this.state;
     Collection.updatePic(this.props.params.collectionId,data.key,state.currentPicKey,{
       success:function(d){
@@ -23,13 +32,20 @@ export default class SetEmployee extends Component {
       }.bind({self:this,key:data.key})
     })
   }
+
   render() {
+    const { memberShipStore } = this.props.store;
+    console.log(memberShipStore.toJS());
     return (
       <div>
         SetEmployee
         <Link to="/employee">employee</Link>
-        <QiniuImageUpload ref="imageUploadDialog" onUploadSuccessHandler={this._onImageUploadSuccessHandler}  /> 
+        <DropdownList dropdownList={memberShipStore.toJS()} mode={1} />
       </div>
     )
   }
 }
+
+SetEmployee.wrappedComponent.propTypes = {
+  store: React.PropTypes.object.isRequired
+};
