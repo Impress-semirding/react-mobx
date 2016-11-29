@@ -35,7 +35,6 @@ export default class SetEmployee extends Component {
 
   render() {
     const { memberShipStore } = this.props.store;
-    console.log(memberShipStore.toJS());
     return (
       <div>
         SetEmployee
