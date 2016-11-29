@@ -5,21 +5,7 @@ export default class MemberShipStore {
   @observable MemberShip = [];
   @observable MemberShipStore = [];
 
-  // subscribeServerToStore() {
-  //   reaction(
-  //     () => this.toJS(),
-  //     todos => fetch('/api/todos', {
-  //       method: 'post',
-  //       body: JSON.stringify({ todos }),
-  //       headers: new Headers({ 'Content-Type': 'application/json' })
-  //     })
-  //   );
-  // }
-  mapConstructor(Array) {
-
-  }
-
-  getByKey(key) {
+  mapStore(key) {
     return this[key].map(ship => ship.toJS());
   }
 
@@ -36,3 +22,5 @@ export default class MemberShipStore {
     return memberShipStore;
   }
 }
+
+

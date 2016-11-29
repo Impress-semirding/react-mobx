@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Menu, Dropdown, Button, Icon, message } from 'antd';
+import { Link } from 'react-router';
+
+import { inject, observer } from 'mobx-react';
 
 function handleButtonClick(e) {
   message.info('Click on left button.');
@@ -19,7 +22,9 @@ const menu = (
   </Menu>
 );
 
-export default class App extends Component {
+// <DevTools />
+@inject('store') @observer
+export default class MemberShip extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -33,6 +38,7 @@ export default class App extends Component {
     });
   }
   render() {
+    console.log(this.props.store.memberShipStore.toJS());
     return (
       <div>
         <Dropdown overlay={menu}>
@@ -40,6 +46,7 @@ export default class App extends Component {
             Button <Icon type="down" />
           </Button>
         </Dropdown>
+        <Link to="/setemployee">link</Link>
       </div>
     )
   }

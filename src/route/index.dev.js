@@ -3,7 +3,7 @@ import { injectAsyncReducer } from '../store';
 import AppState from './../components/app/AppState';
 import App from '../commons/head';
 import Relation from '../components/relation';
-import Employee from '../components/employee';
+import { MemberShip, SetEmployee } from '../components/employee';
 
 
 const Index = {
@@ -22,7 +22,12 @@ const memberRelation = {
 
 const employeeManage = {
   path: 'employee',
-  component: Employee
+  component: MemberShip
+}
+
+const setEmployeeManage = {
+  path: 'setemployee',
+  component: SetEmployee
 }
 
 const route = [
@@ -32,7 +37,8 @@ const route = [
     childRoutes: [
       Index,
       memberRelation,
-      employeeManage
+      employeeManage,
+      setEmployeeManage
     ]
   }
 ];

@@ -3,6 +3,7 @@ import UserStore from './userStore';
 import MemberShipStore from './MemberShipStore';
 //  test case
 import { memberShip } from './../accessConfig/memberShip';
+import {Atom, autorun} from "mobx";
 
 // this.userId = opt.id;
 // this.nickname = opt.nickname;
@@ -14,7 +15,11 @@ const userStore = UserStore.fromJS({
   role: 2
 });
 
+
+// 2 is role code
 const memberShipStore = MemberShipStore.fromJS(memberShip, 2);
+
+const disposer = autorun(() => console.log(memberShipStore.toJS()));
 
 export const routingStore = new RouterStore();
 const stores = {
