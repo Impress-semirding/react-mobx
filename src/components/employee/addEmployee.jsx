@@ -4,12 +4,6 @@ import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router';
 import QiniuImageUpload from "./../../commons/qiniuimageupload.jsx";
 import DropdownList from './../../commons/dropdown';
-import Resource from './resource';
-
-
-
-
-        // <QiniuImageUpload ref="imageUploadDialog" onUploadSuccessHandler={this._onImageUploadSuccessHandler}  /> 
 
 @inject('store') @observer
 export default class SetEmployee extends Component {
@@ -42,10 +36,8 @@ export default class SetEmployee extends Component {
       <div>
         SetEmployee
         <Link to="/employee">employee</Link>
-        <div style={{float: "left",width: "30%"}}>
-          <DropdownList dropdownList={memberShipStore.toJS()} mode={0} />
-        </div>
-        <Resource />
+        <DropdownList dropdownList={memberShipStore.toJS()} mode={0} />
+        
       </div>
     )
   }
