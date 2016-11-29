@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Menu, Dropdown, Button, Icon, message } from 'antd';
 import { Link } from 'react-router';
-
+import EmployeeTable from './table';
+import { memberShip, employee, columns } from '../../accessConfig/employeeList';
+import DropdownList from './../../commons/dropdown';
 import { inject, observer } from 'mobx-react';
 
 function handleButtonClick(e) {
@@ -38,7 +40,7 @@ export default class MemberShip extends Component {
     });
   }
   render() {
-    console.log(this.props.store.memberShipStore.toJS());
+    const { memberShipStore } = this.props.store;
     return (
       <div>
         <Dropdown overlay={menu}>
@@ -47,6 +49,9 @@ export default class MemberShip extends Component {
           </Button>
         </Dropdown>
         <Link to="/setemployee">link</Link>
+        <DropdownList dropdownList={memberShipStore.toJS()} mode={1} />
+        <Link to=""><Button type="primary">新增员工</Button></Link>
+        <EmployeeTable columns={columns} dataSource={employee}/>
       </div>
     )
   }

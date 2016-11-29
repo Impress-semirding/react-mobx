@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Menu, Dropdown, Button, Icon, message } from 'antd';
+import { Menu, Dropdown, Button, Table, Icon, message } from 'antd';
 import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router';
 import QiniuImageUpload from "./../../commons/qiniuimageupload.jsx";
 import DropdownList from './../../commons/dropdown';
+
+
 
 
         // <QiniuImageUpload ref="imageUploadDialog" onUploadSuccessHandler={this._onImageUploadSuccessHandler}  /> 
@@ -39,7 +41,8 @@ export default class SetEmployee extends Component {
       <div>
         SetEmployee
         <Link to="/employee">employee</Link>
-        <DropdownList dropdownList={memberShipStore.toJS()} mode={1} />
+        <DropdownList dropdownList={memberShipStore.toJS()} mode={0} />
+        
       </div>
     )
   }
