@@ -6,7 +6,7 @@
     "start": "node server.js",
     "build:vendor": "webpack --config ./configs/dll.config.js",
     "build": "NODE_ENV=production node server.js",
-    "lint": "eslint src/"
+    "lint": "./node_modules/.bin/eslint src/components/employee/addEmployee.jsx"
   },
   "keywords": [
     "react",
